@@ -1,0 +1,13 @@
+require "optparse"
+
+OptionParser.new do |opts|
+  opts.on "-r", "--require FILE", "Require a file" do |file|
+    puts file
+    require file
+  end
+end.parse!
+
+require "ohm"
+require "ohm/stats"
+
+puts Ohm::Stats.new
